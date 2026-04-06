@@ -107,7 +107,7 @@ header{
     box-shadow: var(--shadow-props);
     border-bottom-left-radius: var(--border-rad-normal);
     border-bottom-right-radius: var(--border-rad-normal);
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
