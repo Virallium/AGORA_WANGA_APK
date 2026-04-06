@@ -25,6 +25,9 @@
         font-size:1.6rem;
         display:block;
     }
+    nav{
+        overflow-x: hidden;
+    }
     nav ul{
         display:flex;
         flex-direction:column;
