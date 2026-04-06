@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="AGORA WANGA ">
+    <meta name="keywords" content="cénacle, département, formation, chrétienne, sessions thématiques, étude de la bible, enseignements de jésus-christ">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="author" content="Cénacle">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="geo.region" content="CD-KN">
+    <meta name="geo.placename" content="Kinshasa">
+    <meta property="og:title" content="Cénacle | département, formation, chrétienne, sessions thématiques, étude de la bible, enseignements de jésus-christ">
+    <meta property="og:description" content="Le Département du cénacle est un département de formation chretienne proposant des sessions thématiques basées sur l'étude de la bible et des enseignements de Jésus-Christ.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cénacle | département, formation, chrétienne, sessions thématiques, étude de la bible, enseignements de jésus-christ">
+    <meta name="twitter:description" content="Le Département du cénacle est un département de formation chretienne proposant des sessions thématiques basées sur l'étude de la bible et des enseignements de Jésus-Christ.">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/media.css' %}">
+    <link rel="stylesheet" href="{% static 'style/animate.css' %}">
+    {% block animate %}
+        <script src="{% static 'js/animate.js' %}" defer></script>
+        <script src="{% static 'js/style.js' %}" defer></script>
+    {% endblock animate %}
+    <link rel="shortcut icon" href="{% static 'photos/logoAgora.png' %}" type="image">
+    <title>{% block title%}AGORA WANGA{% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "Pourquoi avoir devenir disciple de jesus christ est-il important?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Devenir disciple de Jésus-Christ est important pour plusieurs raisons. Tout d'abord, cela permet de suivre les enseignements de Jésus et de vivre selon ses principes, ce qui peut apporter une paix intérieure et une direction dans la vie. De plus, être disciple de Jésus signifie faire partie d'une communauté de croyants qui se soutiennent mutuellement dans leur foi. Enfin, cela offre l'espoir de la vie éternelle et la promesse d'une relation personnelle avec Dieu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels sont les tarifs pour les formations proposées par le département du cénacle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "il n'ya aucun tarif pour les formations proposées par le département du cénacle, elles sont gratuites et ouvertes à tous ceux qui souhaitent approfondir leur foi et leur connaissance de la Bible. Le département du cénacle vise à offrir des enseignements accessibles à tous, sans distinction de statut social ou économique."
+            }
+          }
+        ]
+      }
+    </script>
+</head>
+<body>
+    <main>
+      <div class="loading">
+        <div class="circle">
+          <img src="{% static 'photos/logoAgora.png' %}" alt="">
+        </div>
+      </div>
+      <div class="rgba"></div>
+        <header>
+          {% block header_content %}
+            <div class="logo"><img src="{% static 'photos/logoAgora.png' %}" alt="logo" width="120px"></div>
+            <nav>
+                <ul>
+                  {% block navlinks %}
+                    <li><a href="{% url "Accueil" %}" class="active">Accueil</a></li>
+                    <li><a href="{% url "evenement" %}">Evenements</a></li>
+                    <li><a href="{% url "services" %}">Services</a></li>
+                    <li><a href="{% url "blog" %}">Blog</a></li>
+                    <li><a href="{% url "Apropos" %}">Apropos</a></li>
+                    <i class="fa-solid fa-xmark" id="closed_bar"></i>
+                  {% endblock navlinks %}
+                </ul>
+            </nav>
+            <a href="https://wa.me/243830151196?text=Bonjour, %20je%20souhaite%20voir%20%plus%20%d'informations" target="_blank"" class="contact">Contacter <span><i class="fa-solid fa-phone"></i></span></a>
+            <div class="menu">
+                <i class="fa-solid fa-bars" id="menu_bar"></i>
+            </div>
+          {% endblock header_content %}
+        </header>
+        <section class="hero">
+            {% block section %}
+              <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true">
+                <swiper-slide>
+                    <div class="evenements">
+                      <h1>Evenements à venir</h1>
+                      <h2>DECOUVREZ NOS PROCHAINS EVENEMENTS</h2>
+                      <a href="">VOIR TOUS LES EVENEMENTS</a>
+                    </div>
+                    <div class="content">
+                      <h3>
+                        La justiciabilité des lois de révision constitutionnelle en droit congolais (RDC)
+                          18/04/2026
+
+                          Trouvez facilement votre avocat.
+                          ACCÈDEZ AUX SOLUTIONS JURIDIQUES EN TEMPS RÉEL
+                      </h3>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="evenements">
+                      <h1>AVEZ-VOUS DES QUESTIONS A POSER?</h1>
+                      <h2>DESORMAIS,NOUS VOUS DONNONS LA POSSIBLILITE DE LE FAIRE</h2>
+                      <a href="">VOIRPLUS</a>
+                    </div>
+                    <div class="content">
+                      <h3>
+                        La justiciabilité des lois de révision constitutionnelle en droit congolais (RDC)
+                          18/04/2026
+                          Trouvez facilement votre avocat.
+                          ACCÈDEZ AUX SOLUTIONS JURIDIQUES EN TEMPS RÉEL
+                      </h3>
+                    </div>
+                </swiper-slide>
+              </swiper-container>
+              <div class="equipe">
+                <h2>Notre Equipe</h2>
+                <div class="members">
+                    {% for membre in membres %}
+                      <div class="box">
+                        <div class="circle">
+                          <img src="{{membre.img.url}}" alt="{{membre.nom}}">
+                        </div>
+                        <h2>{{membre.denomination}} <span>{{membre.postnom}}</span> <span>{{membre.nom}}</span></h2>
+                        <p>{{membre.prenom}}</p>
+                        <p><i class="fa-solid fa-location-dot"></i> <span>{{membre.localisation}}</span></p>
+                        <p><i class="fa-solid fa-wand-magic-sparkles"></i> <span>{{membre.specificite}}</span></p>
+                      </div>
+                      {% empty %}
+                       <p>Aucun élément disponible</p>
+                      {% endfor %}
+                </div>
+              </div>
+              <div class="short_slide">
+                <div class="box">
+                  <h2>Restez connectés avec notre équipe Juridique</h2>
+                  <p>Communication en temps réel et simplifiée!</p>
+                  <div class="more">
+                    <a href="{% url "Apropos" %}">Voir plus</a>
+                    <a href="{% url "carte" %}" target="_blank">Carte</a>
+                  </div>
+                </div>
+                <img src="{% static 'photos/com.png' %}" alt="communication" width="100%">
+              </div>
+              <div class="questions">
+                <h1>Questions récentes</h1>
+                <h2>NOS REPONSES AUX QUESTIONS POSEES RECEMENT.</h2>
+                <div class="boxs">
+                    {% for question in questions  %}
+                      <div class="box">
+                        <i class="fa-solid fa-quote-left" id="left"></i>
+                        <div class="top">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <p>{{question.titre}}</p>
+                        </div>
+                        <div class="content">
+                          <p>{{question.message}}</p>
+                          <p>{{question.datepubliee}}</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right" id="right"></i>
+                      </div>
+                      {% endfor %}
+                  </div>
+              </div>
+              <div class="info_juridique">
+                <h1>L'encyclopédie juridique</h1>
+                <h2>DES RENSEIGNEMENTS UTILES POUR CONNAÎTRE VOS DROITS ET VOS DEVOIRS EN TANT QUE CITOYEN</h2>
+                <div class="boxs">
+                  {% for actu in Actus  %}
+                  <div class="box">
+                      <div class="img">
+                        <img src="{{actu.img.url}}" alt="{{actu.titre}}">
+                        <div class="absolute_text">
+                          <p>{{actu.mot_cle}}</p>
+                        </div>
+                      </div>
+                      <h3>{{actu.titre}}</h3>
+                      <p class="datepubliee">{{actu.datepubliee}}</p>
+                      <p>{{actu.description}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+              </div>
+              <div class="services">
+                <h2>Nos services</h2>
+                <h3>CLIQIUEZ ICI POUR VOIR TOUT LES SERVICES QUE NOUS OFFRONS</h3>
+                <div class="boxs">
+                  {% for service in services  %}
+                    <div class="box">
+                      <img src="{{service.Icon.url}}" alt="{{service.titre}}">
+                      <p class="titre">{{service.titre}}</p>
+                      <p>{{service.description}}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endblock section %}
+        </section>
+        <footer>
+          <div class="footer-top">
+            <div class="box">
+              <div class="logo">
+                <img src="{% static 'photos/logoAgora.png' %}" alt="logo" width="120px">
+              </div>
+              <p>Chez Agora Wanga, nous révolutionnons le monde juridique depuis kinshasa avec une plateforme legal et crédible ayant pour but d'accompagné les passionnés du droit</p>
+            </div>
+            <div class="box">
+              <h3>Menu</h3>
+              <div class="links">
+                {% block links %}
+                  <a href="{% url "Accueil" %}"class="active">Accueil</a>
+                  <a href="{% url "evenement" %}">Evenements</a>
+                  <a href="{% url "services" %}">Services</a>
+                  <a href="{% url "blog" %}">Blog</a>
+                  <a href="{% url "Apropos" %}">Apropos</a>
+                {% endblock links %}
+              </div>
+            </div>
+            <div class="box">
+              <h3>Reseau sociaux</h3>
+              <div class="link_rx">
+                <a href="mailto:gaelwangs767@gmail.com" 
+                  title="Envoyer un mail à Gael" 
+                  aria-label="Envoyez-moi un e-mail">
+                    <i class="fa-regular fa-envelope-open"></i>
+                </a>
+                <a href="https://wa.me/243830151196?text=Bonjour, %20je%20souhaite%20voir%20%plus%20%d'informations" target="_blank" arial-label="Discuter sur whatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="tel:+243830151196">
+                  <i class="fa-solid fa-phone"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <p>&copy;2026 Agora wanga- Tous droits reservés.</p>
+            <p>Built by <span><a href="https://kitokodevwork.com" target="_blank">kitokodevwork</a></span></p>
+          </div>
+        </footer>
+        
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+</body>
+</html>

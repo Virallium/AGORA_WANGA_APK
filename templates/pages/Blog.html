@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block navlinks %}
+    <li><a href="{% url "Accueil" %}">Accueil</a></li>
+    <li><a href="{% url "evenement" %}">Evenements</a></li>
+    <li><a href="{% url "services" %}" >Services</a></li>
+    <li><a href="{% url "blog" %}"class="active">Blog</a></li>
+    <li><a href="{% url "Apropos" %}">Apropos</a></li>
+    <i class="fa-solid fa-xmark" id="closed_bar"></i>
+{% endblock navlinks %}
+
+{% block section %}
+    
+    <section class="actualites">
+        <div class="boxs">
+            {% for actu in Actus  %}
+                <div class="box">
+                    <div class="img">
+                    <img src="{{actu.img.url}}" alt="{{actu.titre}}">
+                    <div class="absolute_text">
+                        <p>{{actu.mot_cle}}</p>
+                    </div>
+                    </div>
+                    <h3>{{actu.titre}}</h3>
+                    <p class="datepubliee">{{actu.datepubliee}}</p>
+                    <p>{{actu.description}}</p>
+                </div>
+                {% empty %}
+                <p>Aucun élément disponible</p>
+            {% endfor %}
+        </div>
+    </section>
+    
+{% endblock section %}
+
+{% block links %}
+    <a href="{% url "Accueil" %}">Accueil</a>
+    <a href="{% url "evenement" %}">Evenements</a>
+    <a href="{% url "services" %}" >Services</a>
+    <a href="{% url "blog" %}" class="active">Blog</a>
+    <a href="{% url "Apropos" %}">Apropos</a>
+{% endblock links %}

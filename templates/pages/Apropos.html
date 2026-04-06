@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navlinks %}
+    <li><a href="{% url "Accueil" %}">Accueil</a></li>
+    <li><a href="{% url "evenement" %}">Evenements</a></li>
+    <li><a href="{% url "services" %}" >Services</a></li>
+    <li><a href="{% url "blog" %}">Blog</a></li>
+    <li><a href="{% url "Apropos" %}" class="active">Apropos</a></li>
+    <i class="fa-solid fa-xmark" id="closed_bar"></i>
+{% endblock navlinks %}
+
+{% block section %}
+<div class="presentation">
+    <div class="box-pres">
+        <h1>Bienvenu sur AGORA WANGA</h1>
+        <p>Ce site web a été conçus pour que vous puissiez arrêter de survoler l'actualité mais plutôt pour que vous puissiez commencer à la comprendre.  </p>
+    </div>
+    <div class="boxs">
+        <div class="box">
+            <span>1</span>
+            <p>Le droit n'est pas reservé aux juristes uniquement.</p>
+        </div>
+    </div>
+    <div class="boxs">
+        <div class="box">
+            <span>2</span>
+            <p>Le droit n'est pas reservé aux politiciens uniquement.</p>
+        </div>
+    </div>
+    <div class="agora_info">
+        <i class="fa-solid fa-question"></i>
+        <div class="text">
+            <p>Sur AGORA WANGA, Nous décortiquons les sujets qui sont d'actualité: <span>La constutition, La guerre, La justice</span></p>
+            <p>Notre objectif est de vous les clés afin de comprendre par soi-même le droit. </p>
+        </div>
+    </div>
+</div>
+    <div class="equipe">
+        <div class="administrator">
+            <div class="admin-header">
+                <img src="{% static 'photos/AgoraWanga.jpeg' %}" alt="administrateur">
+                <div class="ident">
+                    <p>Je m'appel GAEL WANGA, étudiant en droit public, 
+                        ainsi, ma spécialisation est le droit constitutionnel, droits humains, politique et le droit administrative
+                    </p>
+                </div>
+            </div>
+            <div class="admin">
+                <h2>Mes ambitions</h2>
+                <div class="valeurs">
+                    <div class="box13">
+                        <h2>Compétence: rédaction jurique, rigueur, liberté et l'eaquipe</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="membr_container">
+            <h2>Membres</h2>
+            <div class="members">
+                {% for membre in membres %}
+                    <div class="box">
+                    <div class="circle">
+                        <img src="{{membre.img.url}}" alt="{{membre.nom}}">
+                    </div>
+                    <h2>{{membre.denomination}} <span>{{membre.postnom}}</span> <span>{{membre.nom}}</span></h2>
+                    <p>{{membre.prenom}}</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span>{{membre.localisation}}</span></p>
+                    <p><i class="fa-solid fa-wand-magic-sparkles"></i> <span>{{membre.specificite}}</span></p>
+                    </div>
+                    {% empty %}
+                    <p>Aucun élément disponible</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock section %}
+{% block links %}
+    <a href="{% url "Accueil" %}">Accueil</a>
+    <a href="{% url "evenement" %}">Evenements</a>
+    <a href="{% url "services" %}">Services</a>
+    <a href="{% url "blog" %}">Blog</a>
+    <a href="{% url "Apropos" %}" class="active">Apropos</a>
+{% endblock links %}

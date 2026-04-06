@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    <link rel="shortcut icon" href="{% static 'photos/logoAgora.png' %}" type="image">
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e7f114dabd7695fc7906c89bd500058a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e7f114dabd7695fc7906c89bd500058a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e7f114dabd7695fc7906c89bd500058a = L.map(
+                "map_e7f114dabd7695fc7906c89bd500058a",
+                {
+                    center: [-4.387953529076802, 15.43947438882351],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_eee08c9e37cacd8d865af916d4af35c0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_eee08c9e37cacd8d865af916d4af35c0.addTo(map_e7f114dabd7695fc7906c89bd500058a);
+        
+    
+            var marker_f15acb4a346733bbc3808f72930cb749 = L.marker(
+                [-4.346624545338484, 15.273659641814447],
+                {
+}
+            ).addTo(map_e7f114dabd7695fc7906c89bd500058a);
+        
+    
+            var icon_54ee44a980b79b143ec0b867c3d5fdca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_718db53226e95212beadcf7916a70250 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8fea75e72a4d6fa49a05d86dbec1aa8 = $(`<div id="html_b8fea75e72a4d6fa49a05d86dbec1aa8" style="width: 100.0%; height: 100.0%;">AGORA WANGA</div>`)[0];
+                popup_718db53226e95212beadcf7916a70250.setContent(html_b8fea75e72a4d6fa49a05d86dbec1aa8);
+            
+        
+
+        marker_f15acb4a346733bbc3808f72930cb749.bindPopup(popup_718db53226e95212beadcf7916a70250)
+        ;
+
+        
+    
+    
+            marker_f15acb4a346733bbc3808f72930cb749.bindTooltip(
+                `<div>
+                     Ceci est la résidence de AGORA WANGA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f15acb4a346733bbc3808f72930cb749.setIcon(icon_54ee44a980b79b143ec0b867c3d5fdca);
+            
+</script>
+</html>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block navlinks %}
+    <li><a href="{% url "Accueil" %}">Accueil</a></li>
+    <li><a href="{% url "evenement" %}">Evenements</a></li>
+    <li><a href="{% url "services" %}" class="active">Services</a></li>
+    <li><a href="{% url "blog" %}">Blog</a></li>
+    <li><a href="{% url "Apropos" %}">Apropos</a></li>
+    <i class="fa-solid fa-xmark" id="closed_bar"></i>
+{% endblock navlinks %}
+
+{% block section %}
+    <div class="services">
+        <h1>Nos services</h1>
+        <div class="boxs">
+            {% for service in services  %}
+                <div class="box">
+                    <img src="{{service.Icon.url}}" alt="{{service.titre}}">
+                    <p class="titre">{{service.titre}}</p>
+                    <p>{{service.description}}</p>
+                </div>
+                {% empty %}
+                <p>Aucun élément disponible</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock section %}
+
+{% block links %}
+    <a href="{% url "Accueil" %}">Accueil</a>
+    <a href="{% url "evenement" %}">Evenements</a>
+    <a href="{% url "services" %}" class="active">Services</a>
+    <a href="{% url "blog" %}">Blog</a>
+    <a href="{% url "Apropos" %}">Apropos</a>
+{% endblock links %}
