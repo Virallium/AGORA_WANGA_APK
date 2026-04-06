@@ -4,5 +4,5 @@ window.addEventListener('load', ()=>{
     const loading_circle_img=document.querySelector('.loading .circle img')
     loading_container.classList.add('removeloading')
     loading_circle.classList.add('removeloadingcircle')
-    loading_circle_img.classList.add('.removeloaingimg')
+    loading_circle_img.classList.add('removeloadingimg')
 })
