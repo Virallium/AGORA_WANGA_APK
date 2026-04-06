@@ -48,7 +48,7 @@
 }
     header{
         height:100%;
-        position:sticky;
+        position:fixed;
     }
     .rgba{
         cursor:pointer;
