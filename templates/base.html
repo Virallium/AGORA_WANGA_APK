@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
     <link rel="stylesheet" href="{% static 'style/media.css' %}">
     <link rel="stylesheet" href="{% static 'style/animate.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     {% block animate %}
         <script src="{% static 'js/animate.js' %}" defer></script>
         <script src="{% static 'js/style.js' %}" defer></script>
@@ -93,7 +94,7 @@
                     <div class="evenements">
                       <h1>Evenements à venir</h1>
                       <h2>DECOUVREZ NOS PROCHAINS EVENEMENTS</h2>
-                      <a href="">VOIR TOUS LES EVENEMENTS</a>
+                      <a href="{% url "evenement" %}">VOIR TOUS LES EVENEMENTS</a>
                     </div>
                     <div class="content">
                       <h3>
@@ -109,7 +110,6 @@
                     <div class="evenements">
                       <h1>AVEZ-VOUS DES QUESTIONS A POSER?</h1>
                       <h2>DESORMAIS,NOUS VOUS DONNONS LA POSSIBLILITE DE LE FAIRE</h2>
-                      <a href="">VOIRPLUS</a>
                     </div>
                     <div class="content">
                       <h3>
@@ -125,7 +125,7 @@
                 <h2>Notre Equipe</h2>
                 <div class="members">
                     {% for membre in membres %}
-                      <div class="box">
+                      <div class="box" data-aos="zoom-out-up" data-aos-duration="4000">
                         <div class="circle">
                           <img src="{{membre.img.url}}" alt="{{membre.nom}}">
                         </div>
@@ -151,11 +151,11 @@
                 <img src="{% static 'photos/com.png' %}" alt="communication" width="100%">
               </div>
               <div class="questions">
-                <h1>Questions récentes</h1>
-                <h2>NOS REPONSES AUX QUESTIONS POSEES RECEMENT.</h2>
+                <h1 data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-duration="4000">Questions récentes</h1>
+                <h2 data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-duration="4000">NOS REPONSES AUX QUESTIONS POSEES RECEMENT.</h2>
                 <div class="boxs">
                     {% for question in questions  %}
-                      <div class="box">
+                      <div class="box" data-aos="fade-down" data-aos-duration="4000">
                         <i class="fa-solid fa-quote-left" id="left"></i>
                         <div class="top">
                             <i class="fa-solid fa-bullhorn"></i>
@@ -171,11 +171,11 @@
                   </div>
               </div>
               <div class="info_juridique">
-                <h1>L'encyclopédie juridique</h1>
-                <h2>DES RENSEIGNEMENTS UTILES POUR CONNAÎTRE VOS DROITS ET VOS DEVOIRS EN TANT QUE CITOYEN</h2>
+                <h1 data-aos="fade-up" data-aos-anchor-placement="bottom-center">L'encyclopédie juridique</h1>
+                <h2 data-aos="fade-up" data-aos-anchor-placement="bottom-center">DES RENSEIGNEMENTS UTILES POUR CONNAÎTRE VOS DROITS ET VOS DEVOIRS EN TANT QUE CITOYEN</h2>
                 <div class="boxs">
                   {% for actu in Actus  %}
-                  <div class="box">
+                  <div class="box" data-aos="fade-down" data-aos-duration="4000">
                       <div class="img">
                         <img src="{{actu.img.url}}" alt="{{actu.titre}}">
                         <div class="absolute_text">
@@ -194,7 +194,7 @@
                 <h3>CLIQIUEZ ICI POUR VOIR TOUT LES SERVICES QUE NOUS OFFRONS</h3>
                 <div class="boxs">
                   {% for service in services  %}
-                    <div class="box">
+                    <div class="box" data-aos="fade-down" data-aos-duration="4000">
                       <img src="{{service.Icon.url}}" alt="{{service.titre}}">
                       <p class="titre">{{service.titre}}</p>
                       <p>{{service.description}}</p>
@@ -249,5 +249,8 @@
         
     </main>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>

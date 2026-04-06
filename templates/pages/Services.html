@@ -10,10 +10,10 @@
 
 {% block section %}
     <div class="services">
-        <h1>Nos services</h1>
+        <h1 data-aos="fade-up" data-aos-anchor-placement="bottom-center">Nos services</h1>
         <div class="boxs">
             {% for service in services  %}
-                <div class="box">
+                <div class="box" data-aos="fade-down" data-aos-duration="4000">
                     <img src="{{service.Icon.url}}" alt="{{service.titre}}">
                     <p class="titre">{{service.titre}}</p>
                     <p>{{service.description}}</p>

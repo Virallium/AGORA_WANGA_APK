@@ -13,7 +13,7 @@
     <section class="actualites">
         <div class="boxs">
             {% for actu in Actus  %}
-                <div class="box">
+                <div class="box" data-aos="fade-down" data-aos-duration="4000">
                     <div class="img">
                     <img src="{{actu.img.url}}" alt="{{actu.titre}}">
                     <div class="absolute_text">

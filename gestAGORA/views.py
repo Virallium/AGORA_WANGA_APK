@@ -6,7 +6,7 @@ def Accueil(request):
     questions=Question.objects.all().order_by('IdQuest')[:5]
     services=Services.objects.all().order_by('Idservices')[:4]
     evenements=Evenement.objects.all()
-    membre=membres.objects.all().order_by('id'[:4])
+    membre=membres.objects.all().order_by('id')[:4]
     return render(request, 'pages/index.html',
            {
                'Actus':actus,
