@@ -952,3 +952,6 @@ footer .bottom span a{
 .membr_container h2{
     color:var(--primary-color);
 }
+#empty{
+    text-align: center;
+}
