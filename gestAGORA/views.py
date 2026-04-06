@@ -31,3 +31,5 @@ def Apropos(request):
     })
 def carte(request):
     return render(request,'pages/carte.html') 
+def sitemap(request):
+    return(request,'pages/sitemap.xml')
