@@ -33,7 +33,7 @@ body{
 }
 .loading{
     width:100%;
-    height:100vh;
+    height:100%;
     background: var(--bg-color);
     position:fixed;
     top:0;
@@ -101,7 +101,6 @@ header{
     align-items: center;
     background: var(--primary-color);
     width: 100%;
-    height: 100%;
     box-shadow: var(--shadow-props);
     border-bottom-left-radius: var(--border-rad-normal);
     border-bottom-right-radius: var(--border-rad-normal);
@@ -533,7 +532,7 @@ Swiper-slide h2::before{
     grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
     place-items:center;
     gap:1rem;
-    padding:1rem;
+    padding:3rem 1rem;
 }
 .services .boxs .box{
     display:flex;
@@ -567,7 +566,7 @@ footer{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
     place-items: center;
-    padding:1rem;
+    padding:.5rem;
     background: var(--primary-color);
     gap:1rem;
     width:100vw;
@@ -623,6 +622,7 @@ footer .bottom span a{
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     justify-content: center;
+    padding: 2rem 0;
 }
 
 .evenementcontainer .boxs .box {
@@ -691,7 +691,8 @@ footer .bottom span a{
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    padding: 1.5rem;
+    padding: 7rem 1.5rem;
+    margin:2rem 0;
 }
 
 .actualites .boxs .box {
@@ -783,7 +784,7 @@ footer .bottom span a{
 
 .presentation .box-pres {
     text-align: center;
-    margin-bottom: 2rem;
+    margin:5rem 0 ;
 }
 
 .presentation .box-pres h1 {
