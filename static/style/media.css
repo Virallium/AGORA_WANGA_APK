@@ -40,6 +40,7 @@
         width:70%;
         background:var(--primary-color);
         z-index:1000;
+        display:none;
     }
     .activemenu{
         transition:all .9S ease;
@@ -48,6 +49,7 @@
         -moz-transition:all .9S ease;
         -ms-transition:all .9S ease;
         -o-transition:all .9S ease;
+        display:block;
 }
     header{
         position:fixed;
