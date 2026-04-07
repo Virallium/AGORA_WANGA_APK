@@ -186,9 +186,9 @@ nav ul li a:hover::before{
 }
 Swiper-slide:nth-child(1){
     background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../photos/swiperslide1.jpg');
-    padding:1rem;
+    padding:2rem 1rem;
     width:100%;
-    height:500px;
+    height:600px;
     display:flex;
     justify-content:center;
     flex-direction: column;
@@ -199,9 +199,9 @@ Swiper-slide:nth-child(1){
 }
 Swiper-slide:nth-child(2){
     background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../photos/swiperslide2.jpg');
-    padding:1rem;
+    padding:2rem 1rem;
     width:100%;
-    height:500px;
+    height:600px;
     display:flex;
     justify-content:center;
     flex-direction: column;
@@ -212,6 +212,7 @@ Swiper-slide:nth-child(2){
 }
 Swiper-slide h1,Swiper-slide h2,Swiper-slide h3, Swiper-slide a{
     color:var(--h-color);
+    margin:1rem 0;
 }
 Swiper-slide h2{
     position:relative;
@@ -578,6 +579,12 @@ footer{
     flex-direction:column;
     text-align:center;
 }
+.footer-top .box .logo{
+    background: var(--bg-color);
+   clip-path: circle(50% at center center);
+   height:90px;
+   width:90px;
+}
 .footer-top p{
     color:var(--h-color);
 }
@@ -617,8 +624,14 @@ footer .bottom{
     background: var(--bg-color);
     width: 100%;
 }
-footer .bottom p, footer .bottom span, footer .bottom span a{
+footer .bottom p, footer .bottom p span, footer .bottom span a{
     color:var(--primary-color);
+}
+footer .bottom span a{
+    font-weight: 600;
+}
+footer .bottom span a:hover{
+    text-decoration: underline;
 }
 .footer-top .box .logo img{
     width: clamp(80px, 20vw, 120px);
