@@ -634,6 +634,7 @@ footer .bottom{
 }
 footer .bottom p, footer .bottom p span, footer .bottom span a{
     color:var(--primary-color);
+    text-align: center;
 }
 footer .bottom span a{
     font-weight: 600;
