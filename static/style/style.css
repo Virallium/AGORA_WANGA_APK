@@ -188,7 +188,7 @@ Swiper-slide:nth-child(1){
     background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../photos/swiperslide1.jpg');
     padding:2rem 1rem;
     width:100%;
-    height:600px;
+    height:100vh;
     display:flex;
     justify-content:center;
     flex-direction: column;
@@ -201,7 +201,7 @@ Swiper-slide:nth-child(2){
     background:linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../photos/swiperslide2.jpg');
     padding:2rem 1rem;
     width:100%;
-    height:600px;
+    height:100vh;
     display:flex;
     justify-content:center;
     flex-direction: column;
@@ -524,6 +524,7 @@ Swiper-slide h2::before{
     flex-direction:column;
     margin: 2rem 0;
     gap:1rem;
+    padding:8rem 0 0 0;
 }
 .services h2, .services h3{
     text-align:center;
@@ -580,10 +581,17 @@ footer{
     text-align:center;
 }
 .footer-top .box .logo{
-    background: var(--bg-color);
-   clip-path: circle(50% at center center);
-   height:90px;
-   width:90px;
+    background:var(--bg-color);
+    width: clamp(80px, 20vw, 120px);
+    height:auto;
+    border-radius:var(--border-rad-circle);
+    -webkit-border-radius:var(--border-rad-circle);
+    -moz-border-radius:var(--border-rad-circle);
+    -ms-border-radius:var(--border-rad-circle);
+    -o-border-radius:var(--border-rad-circle);
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 .footer-top p{
     color:var(--h-color);
@@ -639,10 +647,11 @@ footer .bottom span a:hover{
 }
 
 /*evenements*/
-.evenementcontainer h2{
+.evenementcontainer h1{
     text-align:center;
-    font-size:clamp(1.2rem,4vw,2rem);
     margin-bottom: 2rem;
+    text-align:center;
+    padding:8rem 0 0 0;
 }
 .evenementcontainer {
     padding: 50px 10% ;
@@ -719,13 +728,16 @@ footer .bottom span a:hover{
     color: #444;
 }
 /* --- SECTION ACTUALITÉS --- */
-
+.actualites h1{
+    padding: 8rem 0 0 0;
+    text-align: center;
+    margin: 2rem 0;
+}
 .actualites .boxs {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    padding: 7rem 1.5rem;
-    margin:2rem 0;
+    padding: 3rem 0;
 }
 
 .actualites .boxs .box {
