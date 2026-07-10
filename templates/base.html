@@ -90,18 +90,20 @@
             <nav>
                 <ul>
                   {% block navlinks %}
-                    <li><a href="{% url "Accueil" %}" class="active">Accueil</a></li>
-                    <li><a href="{% url "evenement" %}">Evenements</a></li>
-                    <li><a href="{% url "services" %}">Services</a></li>
-                    <li><a href="{% url "blog" %}">Blog</a></li>
-                    <li><a href="{% url "Apropos" %}">Apropos</a></li>
+                    <li><a href="{% url 'Accueil' %}" class="active">Accueil</a></li>
+                    <li><a href="{% url 'evenement' %}">Evenements</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="{% url 'Apropos' %}">Apropos</a></li>
                     <i class="fa-solid fa-xmark" id="closed_bar"></i>
                   {% endblock navlinks %}
                 </ul>
             </nav>
-            <a href="https://wa.me/243830151196?text=Bonjour, %20je%20souhaite%20voir%20%plus%20%d'informations" target="_blank" class="contact">Contacter <span><i class="fa-solid fa-phone"></i></span></a>
-            <div class="menu">
-                <i class="fa-solid fa-bars" id="menu_bar"></i>
+            <div class="right_nav">
+              <a href="https://wa.me/243830151196?text=Bonjour, %20je%20souhaite%20voir%20%plus%20%d'informations" target="_blank" class="contact">Contacter <span><i class="fa-solid fa-phone"></i></span></a>
+              <div class="menu">
+                  <i class="fa-solid fa-bars" id="menu_bar"></i>
+              </div>
             </div>
           {% endblock header_content %}
         </header>
@@ -112,7 +114,7 @@
                     <div class="evenements">
                       <h1>Evenements à venir</h1>
                       <h2>DECOUVREZ NOS PROCHAINS EVENEMENTS</h2>
-                      <a href="{% url "evenement" %}">VOIR TOUS LES EVENEMENTS</a>
+                      <a href="{% url 'evenement' %}">VOIR TOUS LES EVENEMENTS</a>
                     </div>
                     <div class="content">
                       <h3>
@@ -162,8 +164,8 @@
                   <h2>Restez connectés avec notre équipe Juridique</h2>
                   <p>Communication en temps réel et simplifiée!</p>
                   <div class="more">
-                    <a href="{% url "Apropos" %}">Voir plus</a>
-                    <a href="{% url "carte" %}" target="_blank">Carte</a>
+                    <a href="{% url 'Apropos' %}">Voir plus</a>
+                    <a href="{% url 'carte' %}" target="_blank">Carte</a>
                   </div>
                 </div>
                 <img src="{% static 'photos/com.png' %}" alt="communication" width="100%">

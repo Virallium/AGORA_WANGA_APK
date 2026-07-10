@@ -25,6 +25,44 @@
 html,body{
     overflow-x: hidden;
     position:relative;
+    min-width: 320px;
+    width: 100%;
+    max-width: 100%;
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+img, picture, video, iframe, svg{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+button, input, textarea, select{
+    max-width: 100%;
+}
+section, header, main, footer, nav{
+    width: 100%;
+}
+.container, .wrapper, .content{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+h1{
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.05;
+}
+h2{
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    line-height: 1.1;
+}
+h3{
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    line-height: 1.3;
+}
+p{
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.8;
 }
 body{
     width: 100%;
@@ -109,6 +147,49 @@ header{
     left: 0;
     z-index: 1000;
 }
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.hero swiper-container,
+.hero .mySwiper,
+.hero swiper-slide{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.hero .evenements,
+.hero .content,
+.hero .short_slide,
+.hero .equipe{
+    width: 100%;
+    max-width: 100%;
+}
+.hero .evenements{
+    display:flex;
+    justify-content:center;
+    align-items: flex-start;
+    width:100%;
+    padding: 1.2rem 1.5rem;
+}
+.hero .evenements h1{
+    font-size: clamp(1rem, 4vw, 1.4rem);
+}
+.hero .evenements h2{
+    font-size: clamp(1.4rem, 5vw, 2rem);
+}
+.hero .evenements a{
+    width: fit-content;
+    max-width: 100%;
+}
+.hero .content{
+    padding: 0 1.5rem 1.5rem;
+}
+.hero .content h3{
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    line-height: 1.6;
+}
 nav ul{
     display: flex;
     gap: 1rem;
@@ -189,10 +270,6 @@ Swiper-slide:nth-child(1){
     padding:2rem 1rem;
     width:100%;
     height:100vh;
-    display:flex;
-    justify-content:center;
-    flex-direction: column;
-    gap:1rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -229,27 +306,100 @@ Swiper-slide h2::before{
 .evenements{
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+}
+.evenements h1,
+.evenements h2{
+    margin: 0;
+    width: 100%;
+    text-align: left;
+
+}
+.evenements h1{
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.evenements h2{
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
 }
 .evenements a{
     background: var(--secondary-color);
-    padding:var(--padding-box) .5rem;
-    border-radius:var(--border-rad-little);
-    -webkit-border-radius:var(--border-rad-little);
-    -moz-border-radius:var(--border-rad-little);
-    -ms-border-radius:var(--border-rad-little);
-    -o-border-radius:var(--border-rad-little);
-    width:fit-content;
-    font-weight:550;
+    padding: 0.85rem 1rem;
+    border-radius: var(--border-rad-little);
+    -webkit-border-radius: var(--border-rad-little);
+    -moz-border-radius: var(--border-rad-little);
+    -ms-border-radius: var(--border-rad-little);
+    -o-border-radius: var(--border-rad-little);
+    width: fit-content;
+    max-width: 100%;
+    font-weight: 550;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
 }
 .evenements a:hover{
-    transition:.7s ease-in;
-    -webkit-transition:.7s ease-in;
-    -moz-transition:.7s ease-in;
-    -ms-transition:.7s ease-in;
-    -o-transition:.7s ease-in;
     letter-spacing: 1px;
+    opacity: 0.95;
 }
+
+@media (max-width: 768px) {
+    .evenements{
+        padding: 1rem 1rem;
+        gap: 0.6rem;
+    }
+    .evenements h2{
+        font-size: clamp(1.2rem, 4vw, 1.6rem);
+    }
+    .evenements a{
+        width: 100%;
+        padding: 0.9rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .evenements{
+        padding: 0.8rem 0.8rem;
+    }
+    .evenements h1{
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+    .evenements h2{
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
+    }
+    .questions .boxs .box {
+        align-items: center;
+        text-align: center;
+        padding: 1.2rem;
+    }
+    .questions .boxs .box .top p,
+    .questions .boxs .box .content p {
+        width: 100%;
+        justify-content: center;
+    }
+    .questions .boxs .box #left,
+    .questions .boxs .box #right {
+        position: static;
+        margin: 0 auto;
+        font-size: clamp(1.4rem, 5vw, 2rem);
+    }
+    .info_juridique .boxs .box,
+    .services .boxs .box,
+    .footer-top .box {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .more {
+        width: 100%;
+    }
+}
+
 .equipe{
     width:100%;
     height:100%;
@@ -351,7 +501,7 @@ Swiper-slide h2::before{
 }
 .short_slide{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
     place-items:center;
     text-align:center;
     gap:1rem;
@@ -364,7 +514,7 @@ Swiper-slide h2::before{
 }
 .more{
     display:flex;
-    justify-content:content;
+    justify-content:center;
     align-items:center;
     flex-direction:column;
     gap:1rem;
@@ -421,6 +571,21 @@ Swiper-slide h2::before{
 .questions .boxs .box #right{
     font-size:clamp(1.3rem,3vw,3rem);
 }
+.questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.questions h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    text-align: center;
+}
+.questions h2 {
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    text-align: center;
+}
 .questions .boxs .box .top p{
     background: var(--bg-color);
     color: var(--primary-color);
@@ -457,6 +622,12 @@ Swiper-slide h2::before{
 }
 .info_juridique h1,.info_juridique h2{
     text-align:center;
+}
+.info_juridique h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+.info_juridique h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 .info_juridique .boxs{
     display:grid; 
@@ -526,8 +697,13 @@ Swiper-slide h2::before{
     gap:1rem;
     padding:8rem 0 0 0;
 }
-.services h2, .services h3{
-    text-align:center;
+.services h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    text-align: center;
+}
+.services h3{
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    text-align: center;
 }
 .services .boxs{
     display:grid; 
@@ -568,10 +744,10 @@ footer{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
     place-items: center;
-    padding:.5rem;
+    padding:1rem;
     background: var(--primary-color);
     gap:1rem;
-    width:100vw;
+    width:100%;
 }
 .footer-top .box{
     display:flex;
@@ -599,6 +775,7 @@ footer{
 .footer-top .box h3{
     color:var(--h-color);
     text-align:center;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
 }
 .footer-top .box .links{
     display:flex;
@@ -606,6 +783,10 @@ footer{
     gap:1rem;
     justify-content:center;
     align-items:center;
+}
+.footer-top .box .links a{
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    color: var(--h-color);
 }
 .footer-top .box .link_rx{
     display:flex;
@@ -615,12 +796,17 @@ footer{
 }
 .footer-top .box .link_rx a{
     color:var(--h-color);
-    font-size:1.5rem;
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
     transition: all 0.3s ease;
 }
 .footer-top .box .link_rx a:hover{
     color:var(--secondary-color);
     transform: scale(1.1);
+}
+.footer-top p{
+    color:var(--h-color);
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.7;
 }
 footer .bottom{
     display:flex;
@@ -653,6 +839,7 @@ footer .bottom span a:hover{
     margin-bottom: 2rem;
     text-align:center;
     padding:8rem 0 0 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
 }
 .evenementcontainer {
     padding: 50px 10% ;
@@ -700,7 +887,7 @@ footer .bottom span a:hover{
     scale: 1.1;
 }
 .evenementcontainer .boxs .box .titre {
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     font-weight: bold;
     color: #333;
     margin: 15px 20px 5px;
@@ -708,8 +895,8 @@ footer .bottom span a:hover{
 
 .evenementcontainer .boxs .box p:not(.titre) {
     color: #666;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.6;
     margin: 0 20px 20px;
     flex-grow: 1; 
 }
@@ -725,7 +912,7 @@ footer .bottom span a:hover{
 
 .evenementcontainer .boxs .box .bottom p {
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
     color: #444;
 }
 /* --- SECTION ACTUALITÉS --- */
@@ -733,6 +920,7 @@ footer .bottom span a:hover{
     padding: 8rem 0 0 0;
     text-align: center;
     margin: 2rem 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
 }
 .actualites .boxs {
     display: grid; 
@@ -784,7 +972,7 @@ footer .bottom span a:hover{
     color: var(--h-color);
     padding: 0.4rem 1rem;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
     border-radius: var(--border-rad-little);
     -webkit-border-radius: var(--border-rad-little);
     -moz-border-radius: var(--border-rad-little);
@@ -796,12 +984,12 @@ footer .bottom span a:hover{
 .actualites .boxs .box h3 {
     padding: 1.2rem 1rem 0.5rem;
     color: var(--txt-color);
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 
 .actualites .boxs .box .datepubliee {
     margin: 0 1rem 1rem;
-    font-size: 0.85rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
     color: var(--h-color);
     background: var(--secondary-color);
     width: fit-content;
@@ -814,7 +1002,7 @@ footer .bottom span a:hover{
 .actualites .boxs .box p:last-child {
     padding: 0 1rem 1.5rem;
     color: var(--txt-color);
-    font-size: 0.95rem;
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
     line-height: 1.5;
     flex-grow: 1;
 }
@@ -841,7 +1029,7 @@ footer .bottom span a:hover{
 
 .presentation .box-pres p {
     color: var(--h-color);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -941,7 +1129,7 @@ footer .bottom span a:hover{
 }
 
 .equipe .administrator .admin .valeurs .box13 h2 {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
     background: var(--secondary-color);
     padding: 1rem;
     border: none;
@@ -952,7 +1140,7 @@ footer .bottom span a:hover{
 .equipe .membres h2 {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
     color: var(--primary-color);
 }
 
@@ -977,7 +1165,7 @@ footer .bottom span a:hover{
 }
 
 .equipe .membres .box h2 {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     margin: 0.5rem 0;
 }
 
