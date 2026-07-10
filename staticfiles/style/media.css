@@ -1,91 +1,88 @@
+/* ==========================================================================
+   MEDIA QUERIES (TABLETTES & SMARTPHONES)
+   ========================================================================== */
 
-:root{
-    --font-family: 'Poppins','Sans-serif';
-    --border-rad-little:8px;
-    --border-rad-normal:12px;
-    --border-rad-circle:50%;
-    --primary-color:#22335b;
-    --secondary-color:#e99b2b;
-    --bg-color:#ffffff;
-    --txt-color:#000;
-    --h-color:#fff;
-    --shadow-props:3px 3px 7px rgba(34, 51, 91, 0.422);
-    --padding-box:1rem;
+@media (max-width: 1024px) {
+    section > div:not(.rgba) {
+        padding: 4rem 5%;
+    }
+    
+    swiper-slide {
+        padding: 3rem 5%;
+    }
+
+    .short_slide {
+        gap: 2rem;
+    }
+    .short_slide .box {
+        padding: 4rem 0 4rem 10%;
+    }
 }
-@media(max-width:1024px) {
-    #menu_bar{
-        display:block;
+
+@media (max-width: 768px) {
+    .menu {
+        display: block;
+    }
+
+    /* C'est maintenant le 'ul' qui fait office de tiroir coulissant */
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--surface-color);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 100;
+        padding: 5rem 2rem;
+        transition: var(--transition-smooth);
+        
+        /* On force l'alignement vertical pour le mobile */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    /* Modifié pour correspondre à votre JS (nav ul.activemenu) */
+    nav ul.activemenu {
+        right: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    #closed_bar {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        color: var(--primary-color);
         cursor: pointer;
+        z-index: 101; /* Pour être sûr qu'il reste cliquable au-dessus du menu */
     }
-    nav ul #closed_bar{
-        cursor: pointer;
-        position:absolute;
-        top:3rem;
-        right:1rem;
-        font-size:1.6rem;
-        display:block;
-    }
-    nav{
-        overflow-x: hidden;
-    }
-    nav ul{
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
-        align-items: center;
-        position:absolute;
-        right:-100%;
-        top:0;
-        padding:5rem 0 0 4rem ;
-        height:100vh;
-        width:70%;
-        background:var(--primary-color);
-        z-index:1000;
-        display:none;   
-    }
-    nav ul li{
-        margin:3rem 0;
-    }
- 
-    .activemenu{
-        transition:all .9S ease;
-        right:0;
-        -webkit-transition:all .9S ease;
-        -moz-transition:all .9S ease;
-        -ms-transition:all .9S ease;
-        -o-transition:all .9S ease;
-        display:block;
+    
+    /* ... (le reste de votre media.css pour le hero, footer etc. reste inchangé) */
 }
-    header{
-        position:fixed;
-        padding:.6rem;
+
+@media (max-width: 480px) {
+    section h2 {
+        font-size: 1.6rem;
     }
-    .rgba{
-        cursor:pointer;
+
+    .questions h2, 
+    .info_juridique h2 {
+        font-size: 1.4rem;
     }
-    .rgbaactive{
-        width:100%;
-        height:100vh;
-        background:rgba(0, 0, 0, 0.4);
-        z-index:999;
-        position:fixed;
-        top:0;
-        left:0;
-    }
-    .right_nav{
-        display:flex;
-        justify-content:space-around;
-        gap:1rem;
-        align-items:center;
-        padding:0 2rem; 
-    }
-    #menu_bar{
-        font-size:1.3rem;
-    }
-    .contact{
-        display:flex;
-        gap:.5rem;
-        align-items:center;
-        justify-content:center;
+
+    .right_nav .contact {
+        display: none; /* Optionnel : masque le bouton d'appel sur tout petit écran si encombré */
     }
 }

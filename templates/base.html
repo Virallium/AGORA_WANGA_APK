@@ -155,7 +155,7 @@
                         <p><i class="fa-solid fa-wand-magic-sparkles"></i> <span>{{membre.specificite}}</span></p>
                       </div>
                       {% empty %}
-                       <p>Aucun élément disponible</p>
+                       <p id="empty">Aucun élément disponible</p>
                       {% endfor %}
                 </div>
               </div>
@@ -206,6 +206,8 @@
                       <p class="datepubliee">{{actu.datepubliee}}</p>
                       <p>{{actu.description}}</p>
                     </div>
+                    {% empty %}
+                      <p id="empty">Aucun élément disponible</p>
                     {% endfor %}
                 </div>
               </div>
@@ -219,6 +221,8 @@
                       <p class="titre">{{service.titre}}</p>
                       <p>{{service.description}}</p>
                     </div>
+                    {% empty %}
+                      <p id="empty">Aucun élément disponible</p>
                   {% endfor %}
                 </div>
               </div>
