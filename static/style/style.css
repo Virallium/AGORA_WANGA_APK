@@ -240,6 +240,13 @@ swiper-slide {
     background-size: cover;
     background-position: center;
 }
+swiper-slide:nth-child(1) {
+    background-image: linear-gradient(135deg, rgba(34, 51, 91, 0.95) 40%, rgba(21, 25, 37, 0.85)), url('/static/photos/swiperslide1.jpg');
+}
+swiper-slide:nth-child(2) {
+    background-image: linear-gradient(135deg, rgba(34, 51, 91, 0.95) 40%, rgba(21, 25, 37, 0.85)), url('/static/photos/swiperslide2.jpg');
+}
+
 
 .hero .evenements {
     max-width: 50%;

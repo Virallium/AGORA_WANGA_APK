@@ -85,4 +85,7 @@
     .right_nav .contact {
         display: none; /* Optionnel : masque le bouton d'appel sur tout petit écran si encombré */
     }
+     swiper-slide .content{
+        display:none;
+    }
 }
